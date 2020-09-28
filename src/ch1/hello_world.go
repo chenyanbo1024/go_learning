@@ -1,12 +1,12 @@
 package main
 
 import (
-  "fmt"
-  "os"
+	"fmt"
+	"os"
 )
 
-func main()  {
-  fmt.Println(os.Args)
-  fmt.Println("Hello World")
-  os.Exit(-1)
+func main() {
+	fmt.Println(os.Args)
+	fmt.Println("Hello World")
+	os.Exit(-1)
 }
