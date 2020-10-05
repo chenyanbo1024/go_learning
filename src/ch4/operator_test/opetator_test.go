@@ -23,6 +23,21 @@ package operate_test
 
 import "testing"
 
+const (
+	Readable = 1 << iota
+	Writable
+	Excuteable
+)
+
+func TestBitClear(t *testing.T) {
+	a := 7
+
+	a = a &^ Readable
+	a = a &^ Excuteable
+
+	t.Log(a&Readable == Readable, a&Writable == Writable, a&Excuteable == Excuteable)
+}
+
 // 用 == 比较数组
 func TestCompareArray(t *testing.T) {
 	a := [...]int{1, 2, 3, 4}
