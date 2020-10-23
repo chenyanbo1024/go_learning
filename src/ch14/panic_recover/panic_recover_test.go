@@ -1,12 +1,12 @@
 package panicRecoverTest
 
-// panic用于不可以恢复的错误
 import (
 	"errors"
 	"fmt"
 	"testing"
 )
 
+// panic用于不可以恢复的错误
 // panic退出前会执行defer指定的内容
 
 // panic vs os.Exit
