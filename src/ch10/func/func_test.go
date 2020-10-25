@@ -4,6 +4,9 @@
 // 3.函数可以作为变量的值
 // 4.函数可以作为参数和返回值
 
+// defer:延时执行函数
+// 1.与C#中的try catch finnaly 中的finnaly
+
 package funcTest
 
 import (
@@ -30,6 +33,29 @@ func timeSpent(inner func(op int) int) func(op int) int {
 func slowFun(op int) int {
 	time.Sleep(time.Second * 2)
 	return op
+}
+
+func Sum(ops ...int) int {
+	ret := 0
+	for _, op := range ops {
+		ret += op
+	}
+	return ret
+}
+
+func TestVarParam(t *testing.T) {
+	t.Log(Sum(1, 2, 3, 4))
+	t.Log(Sum(1, 2, 3, 4, 5))
+}
+
+func Clear() {
+	fmt.Println("clear resources.")
+}
+
+func TestDefer(t *testing.T) {
+	defer Clear()
+	fmt.Println("Start")
+	// panic("err")
 }
 
 func TestFn(t *testing.T) {
